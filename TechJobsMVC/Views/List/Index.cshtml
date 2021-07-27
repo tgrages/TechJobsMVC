@@ -18,7 +18,13 @@
         <td>
             <ul>
                 <li>
-                    <a asp-controller="List" asp-action="Jobs" asp-route-column="@ViewBag.columns["all"]" asp-route-value="all">View All</a>
+                    <a asp-controller="List"
+                       asp-action="Jobs"
+                       asp-route-column="@ViewBag.columns["all"]"
+                       asp-route-value="all"
+                     >
+                        View All
+                    </a>
                 </li>
             </ul>
         </td> 
@@ -30,7 +36,13 @@
                     @foreach (var item in category.Value)
                     {
                         <li>
-                            <a asp-controller="List" asp-action="Jobs" asp-route-column="@category.Key" asp-route-value="@item">@item</a>
+                            <a asp-controller="List"
+                               asp-action="Jobs"
+                               asp-route-column="@category.Key"
+                               asp-route-value="@item"
+                             >
+                                @item
+                            </a>
                         </li>
                     }
                 </ul>

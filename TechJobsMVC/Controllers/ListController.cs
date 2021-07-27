@@ -44,16 +44,19 @@ namespace TechJobsMVC.Controllers
         public IActionResult Jobs(string column, string value)
         {
             List<Job> jobs;
+
             if (column.ToLower().Equals("all"))
             {
                 jobs = JobData.FindAll();
                 ViewBag.title = "All Jobs";
             }
+
             else
             {
                 jobs = JobData.FindByColumnAndValue(column, value);
                 ViewBag.title = "Jobs with " + ColumnChoices[column] + ": " + value;
             }
+
             ViewBag.jobs = jobs;
 
             return View();
